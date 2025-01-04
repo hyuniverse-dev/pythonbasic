@@ -31,11 +31,20 @@ class Student(Person):
 
 # Teacher 클래스 정의 - Person 상속
 #   추가 속성: subject
+class Teacher(Person):
+    def __init__(self, name, age, gender, subject):
+        super().__init__(name, age, gender)
+        self.subject = subject
+
 
 ############################################
 
 # Student 인스턴스 생성 후 name, age, gender, korean, math, english 점수 출력
 student = Student("박현", 20, "남성", 80, 90, 95)
 print(student.name, student.age, student.gender, student.korean, student.math, student.english)
+student.introduce()
 
 # Teacher 인스턴스 생성 후 name, age, gender, subject 출력
+teacher = Teacher("박현", 20, "남성", "파이썬")
+print(teacher.name, teacher.age, teacher.gender, teacher.subject)
+teacher.introduce()
