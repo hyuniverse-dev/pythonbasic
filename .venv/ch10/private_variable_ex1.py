@@ -58,3 +58,6 @@ circle1._Circle__name = "삼각형"
 print(circle1.get_name())
 
 circle1.set_radius(-1)
+
+
+
