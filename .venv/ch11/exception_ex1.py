@@ -3,7 +3,7 @@
 위치: .venv/ch11/
 '''
 
-# 예외처리 (Exception/Error Handling)
+# 예외처리 - 1 (Exception/Error Handling)
 
 #   예외 상황 발생시키기
 print("::: 프로그램 시작 :::")
@@ -55,10 +55,19 @@ print("::: 프로그램 종료 :::")
 #################### 끝 ####################
 
 
+########## try - except 사용 예시 ##########
 
+list_a = ["52", "273", "32", "apple", "103"]
 
+# list_a 를 순회하면서 숫자 데이터만 float으로 타입캐스팅
 
+list_b = []
 
+for item in list_a:
+    try:
+        list_b.append(int(item))
+    except:
+        pass
 
-
+print(f"{list_a} 중에서 숫자 데이터만 추출하면 {list_b}")
 
