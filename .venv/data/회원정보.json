@@ -1,0 +1,14 @@
+[
+    {
+        "member_no": 1,
+        "member_id": "id1",
+        "member_name": "옥순",
+        "phone": "010-1111-1111"
+    },
+    {
+        "member_no": 2,
+        "member_id": "id2",
+        "member_name": "영자",
+        "phone": "010-2222-2222"
+    }
+]
