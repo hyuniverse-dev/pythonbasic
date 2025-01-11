@@ -41,6 +41,8 @@ file = open(directory, 'rt', encoding='utf-8')
 
 result = file.readlines()
 
+print(result)
+
 for index, item in enumerate(result, start=1):
     # 3번째 줄까지만 출력
     if index <= line:
