@@ -1,6 +1,7 @@
 '''
 파일명: user.py
 위치: .venv/ch14/models
+설명: 사용자 정보를 생성하는 클래스
 '''
 
 
@@ -28,6 +29,10 @@ class User:
 
         if not has_digit or not has_alpha:
             raise ValueError("비밀번호 형식이 올바르지 않습니다.")
+
+        ### 리팩토링 (컴프리핸션 표현 방법으로 수정 가능)
+        # if not any(word.isdigit() for word in self.password or word.isalpha() for word in self.password):
+        #     raise ValueError("비밀번호 형식이 올바르지 않습니다.")
 
     def valid_email(self):
         # (1) 이메일 정합성 검사 - @, .
