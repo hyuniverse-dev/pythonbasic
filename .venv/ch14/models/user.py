@@ -13,8 +13,13 @@ class User:
         self.name = name
         self.email = email
 
+        self.valid_values()
         self.valid_password()
         self.valid_email()
+
+    def valid_values(self):
+        if not self.id or not self.password or not self.email or not self.name:
+            raise ValueError("필수값 입력이 누락됐습니다.")
 
     def valid_password(self):
         # (2) 비밀번호 정합성 검사 - 영어+숫자 조합
