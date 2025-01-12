@@ -1,6 +1,7 @@
 from ch14.common import menu
 from ch14.services import auth
 
+
 '''
 파일명: main.py
 위치: .venv/ch14/
@@ -17,6 +18,11 @@ while True:
     elif user_input == '2':
         auth.sign_in()
     elif user_input == '3':
+        auth.remove_user()
+    elif user_input == '4':
+        # 아이디와 비밀번호를 입력받아서 해당 회원이 정보를 조회하는 메뉴
+        pass
+    elif user_input == '5':
         break;
     else:
         print("메뉴를 다시 선택해주세요")

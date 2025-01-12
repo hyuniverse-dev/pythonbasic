@@ -6,7 +6,7 @@
 
 from ch14.common.custom_format import custom_print
 from ch14.models.user import User
-from ch14.utils.helper import save_user, check_user
+from ch14.utils.helper import save_user, check_user, delete_user
 
 
 def sign_up():
@@ -28,6 +28,12 @@ def sign_in():
     check_user(input_id, input_password)
 
 
+def remove_user():
+    input_id = input("아이디: ")
+    input_password = input("비밀번호: ")
+    delete_user(input_id, input_password)
+
+
 def get_user_info(user_id: str, user_password: str):
     '''
     사용자 정보를 조회하는 함수
@@ -37,16 +43,6 @@ def get_user_info(user_id: str, user_password: str):
     :return:
     '''
     custom_print(f"회원님의 아이디:{user_id}, 비밀번호:{user_password}")
-
-
-def remove_user():
-    '''
-    사용자 정보를 삭제하는 함수
-
-    :return:
-    '''
-    custom_print("회원탈퇴가 되었습니다.")
-    return "", ""
 
 
 def insert_user():

@@ -7,7 +7,17 @@ from ch14.models.user import User
 
 
 def save_user(user: User):
-    members = []
+    # 기존 데이터 조회
+    members = load_data_fromjson("./members.json")
+
+    if len(members) < 1:
+        members = []
+
+    # 동일한 아이디 존재시
+    for member in members:
+        if member.get("id") == user.id:
+            raise ValueError("아이디가 존재합니다.")
+
     members.append(user.__dict__)
     save_data_tojson("./members.json", members)  # 객체의 메소드를 제외한 속성만 추출 후 전달
 
@@ -19,6 +29,21 @@ def check_user(id: str, password: str):
             print(f"{member.get("id")}님 로그인 되었습니다.")
             return
     raise ValueError("로그인 실패했습니다. (아이디 혹은 비밀번호를 확인해주세요.)")
+
+
+def delete_user(id: str, password: str):
+    # 기존 데이터 조회
+    members = load_data_fromjson("./members.json")
+    new_members = []
+
+    # 전달받은 아이디랑 비밀번호가 일치하는 데이터 제외하고
+    # 나머지 저장
+    for member in members:
+        if member.get("id") == id and member.get("password") == password:
+            continue
+        new_members.append(member)
+
+    save_data_tojson("./members.json", new_members)
 
 
 def save_data_tojson(path: str, data):
