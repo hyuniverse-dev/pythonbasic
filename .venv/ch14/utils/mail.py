@@ -1,3 +1,7 @@
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 '''
 파일명: mail.py
 위치: ch14/utils/

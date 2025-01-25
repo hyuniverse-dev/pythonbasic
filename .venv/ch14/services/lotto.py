@@ -22,8 +22,11 @@ def send_lotto():
     당첨을 축하드립니다~ 짝짝짝~
     """
 
-    mail.send_mail(
-        "hyuniverse.dev@gmai.com",
-        "여보게~ 이번주 당첨번호라네~",
-        body
-    )
+    members_email = ["abc1@email.com", "abc2@email.com", "abc3@email.com"]
+
+    for email in members_email:
+        mail.send_mail(
+            email,
+            "여보게~ 이번주 당첨번호라네~",
+            body
+        )

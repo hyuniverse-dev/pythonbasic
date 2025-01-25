@@ -11,7 +11,7 @@ def print_main_menu():
     :return: 
     '''
     print("<웰컴투 파이썬 버전2>")
-    show_menus(["회원가입", "로그인", "회원탈퇴", "회원정보 조회","프로그램 종료"])
+    show_menus(["회원가입", "로그인", "회원탈퇴", "회원정보 조회", "로또 번호 메일 발송", "프로그램 종료"])
     user_input = input(">>>")
     return user_input
 
