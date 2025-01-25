@@ -1,6 +1,5 @@
 from ch14.common import menu
-from ch14.services import auth
-
+from ch14.services import auth, lotto
 
 '''
 파일명: main.py
@@ -23,6 +22,9 @@ while True:
         # 아이디와 비밀번호를 입력받아서 해당 회원이 정보를 조회하는 메뉴
         pass
     elif user_input == '5':
+        # 로또 메일 발송 서비스
+        lotto.send_lotto()
+    elif user_input == '6':
         break;
     else:
         print("메뉴를 다시 선택해주세요")

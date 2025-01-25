@@ -9,8 +9,8 @@ from email.mime.multipart import MIMEMultipart
 ### 이메일 발송하기
 
 ###     이메일 발신 정보
-sender = "ggolre90@gmail.com"
-password = "hqat licc bufq uzjo"
+sender = "hyuniverse.dev@gmail.com"
+password = "ibab cgov oojt ymhy"
 receiver = "hyuniverse.dev@gmail.com"
 
 ###     이메일 내용 구성
