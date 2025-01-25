@@ -68,11 +68,11 @@ def open_signup_window():
     frame.pack(pady=50)
 
     button_confirm = tk.Button(frame, text="가입",
-                               command=lambda: print(entry_id.get(),
-                                                     entry_password.get(),
-                                                     entry_name.get(),
-                                                     entry_email.get()
-                                                     )
+                               command=lambda: sign_up(entry_id.get(),
+                                                       entry_password.get(),
+                                                       entry_name.get(),
+                                                       entry_email.get()
+                                                       )
                                )
     button_cancel = tk.Button(frame, text="취소", command=lambda: root.destroy())
 
@@ -81,6 +81,16 @@ def open_signup_window():
 
     root.mainloop()
 
+def open_login_window():
+    root = create_screen("로그인")
+    
+    # 아이디 입력 텍스트 필드 생성
+    
+    # 비밀번호 입력 텍스트 필드 생성
+
+    # 버튼 생성 (확인/닫기)
+    
+    root.mainloop()
 
 if __name__ == "__main__":
     open_program_menu()
