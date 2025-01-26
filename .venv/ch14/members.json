@@ -10,5 +10,11 @@
         "password": "abc1234",
         "name": "박현",
         "email": "noah@naver.com"
+    },
+    {
+        "id": "noah1",
+        "password": "noah1234",
+        "name": "noah",
+        "email": "noah@naver.com"
     }
 ]

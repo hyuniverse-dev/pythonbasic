@@ -18,7 +18,10 @@ def sign_up(input_id: str, input_password: str, input_name: str, input_email: st
 
 
 def sign_in(input_id: str, input_password: str):
-    check_user(input_id, input_password)
+    from ch14.screens.screen import open_mypage_window
+    response = check_user(input_id, input_password)
+    if response:
+        open_mypage_window()
 
 
 def remove_user():

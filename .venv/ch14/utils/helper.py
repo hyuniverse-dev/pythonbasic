@@ -27,7 +27,7 @@ def check_user(id: str, password: str):
     for member in members:
         if member.get("id") == id and member.get("password") == password:
             print(f"{member.get("id")}님 로그인 되었습니다.")
-            return
+            return True
     raise ValueError("로그인 실패했습니다. (아이디 혹은 비밀번호를 확인해주세요.)")
 
 

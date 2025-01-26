@@ -150,5 +150,22 @@ def open_weather_result_window(temp: int, feels_like: int, humidity: int, pop: f
     root.mainloop()
 
 
+def open_mypage_window():
+    root = create_screen("마이페이지")
+
+    button_lotto = tk.Button(root, text="로또 번호 발송하기", command=lambda: open_lotto_window()).pack(pady=10)
+    button_weather = tk.Button(root, text="날씨 조회하기", command=lambda: open_weather_window()).pack(pady=10)
+    button_close = tk.Button(root, text="닫기", command=lambda: root.destroy()).pack(pady=10)
+
+    root.mainloop()
+
+
+def open_lotto_window():
+    from ch14.services.lotto import send_lotto
+    root = create_screen("로또 번호 발송")
+    button_send = tk.Button(root, text="로또 번호 이메일 발송", command=lambda: send_lotto()).pack(pady=10)
+    button_close = tk.Button(root, text="닫기", command=lambda: root.destroy()).pack(pady=10)
+
+
 if __name__ == "__main__":
-    open_weather_window()
+    open_mypage_window()
