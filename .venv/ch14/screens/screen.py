@@ -37,7 +37,6 @@ def open_program_menu():
     return True
 
 
-
 def open_signup_window():
     from ch14.services.auth import sign_up
     root = create_screen("회원가입")
@@ -118,5 +117,38 @@ def open_login_window():
     root.mainloop()
 
 
+def open_weather_window():
+    from ch14.services.weather import get_geocoding_data
+    root = create_screen("날씨 검색")
+
+    label_search = tk.Label(root, text="지역명을 입력해주세요.")
+    label_search.pack(pady=30)
+    entry_search = tk.Entry(root)
+    entry_search.pack(pady=30)
+
+    button_search = tk.Button(root, text="검색", command=lambda: get_geocoding_data(entry_search.get()))
+    button_search.pack(pady=15)
+
+    button_close = tk.Button(root, text="닫기", command=lambda: root.destroy())
+    button_close.pack(pady=15)
+
+    root.mainloop()
+
+
+def open_weather_result_window(temp: int, feels_like: int, humidity: int, pop: float):
+    root = create_screen("날씨 정보")
+    label_title = tk.Label(root, text="날씨 조회 결과")
+    label_title.pack()
+
+    tk.Label(root, text=f"온도: {temp}도").pack(pady=10)
+    tk.Label(root, text=f"체감 온도: {feels_like}도").pack(pady=10)
+    tk.Label(root, text=f"습도: {humidity}%").pack(pady=10)
+    tk.Label(root, text=f"강수 확률: {pop}%").pack(pady=10)
+
+    tk.Button(root, text="닫기", command=lambda: root.destroy()).pack(pady=10)
+
+    root.mainloop()
+
+
 if __name__ == "__main__":
-    open_program_menu()
+    open_weather_window()
