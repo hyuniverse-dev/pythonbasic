@@ -26,7 +26,7 @@ def open_program_menu():
     button_signup = tk.Button(root, text="회원가입", command=lambda: open_signup_window())
 
     # 로그인 버튼
-    button_login = tk.Button(root, text="로그인", command=None)
+    button_login = tk.Button(root, text="로그인", command=lambda: open_login_window())
 
     # 버튼 모양 지정 및 노출
     button_signup.pack(pady=20)
@@ -34,8 +34,12 @@ def open_program_menu():
 
     root.mainloop()
 
+    return True
+
+
 
 def open_signup_window():
+    from ch14.services.auth import sign_up
     root = create_screen("회원가입")
 
     # 아이디 입력
@@ -81,16 +85,38 @@ def open_signup_window():
 
     root.mainloop()
 
-def open_login_window():
-    root = create_screen("로그인")
-    
-    # 아이디 입력 텍스트 필드 생성
-    
-    # 비밀번호 입력 텍스트 필드 생성
 
-    # 버튼 생성 (확인/닫기)
-    
+def open_login_window():
+    from ch14.services.auth import sign_in
+    root = create_screen("로그인")
+
+    # 사용자 이름 입력
+    label_id = tk.Label(root, text="아이디를 입력하세요")
+    label_id.pack(pady=20)
+    entry_id = tk.Entry(root)
+    entry_id.pack()
+
+    # 이메일 입력
+    label_password = tk.Label(root, text="비밀번호를 입력하세요")
+    label_password.pack(pady=20)
+    entry_password = tk.Entry(root)
+    entry_password.pack()
+
+    # 버튼 생성하기(가입/취소)
+    frame = tk.Frame(root)
+    frame.pack(pady=50)
+
+    button_confirm = tk.Button(frame,
+                               text="확인",
+                               command=lambda: sign_in(entry_id.get(), entry_password.get())
+                               )
+    button_cancel = tk.Button(frame, text="취소", command=lambda: root.destroy())
+
+    button_confirm.pack(side="left")
+    button_cancel.pack(side="left")
+
     root.mainloop()
+
 
 if __name__ == "__main__":
     open_program_menu()

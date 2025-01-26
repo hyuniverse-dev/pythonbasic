@@ -17,9 +17,7 @@ def sign_up(input_id: str, input_password: str, input_name: str, input_email: st
         print(f"사용자 생성 실패: {e}")
 
 
-def sign_in():
-    input_id = input("아이디: ")
-    input_password = input("비밀번호: ")
+def sign_in(input_id: str, input_password: str):
     check_user(input_id, input_password)
 
 
